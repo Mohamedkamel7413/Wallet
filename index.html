@@ -18,30 +18,42 @@
 
   <body>
     <div class="container d-flex flex-column gap-3 mt-5">
-
-      <h1 >Welcome : <span id="userNameSpan">username</span>
-        <button 
-        data-bs-toggle="modal"
-        data-bs-target="#passwordModal"
-        class="btn btn-primary col-2"
-      >
-        log In
-      </button></h1>
-
+      <div class="d-flex flex-row gap-1">
+        <h1 class="col-10">
+          Welcome : <span id="userNameSpan">username</span>
+        </h1>
+        <button
+          data-bs-toggle="modal"
+          data-bs-target="#passwordModal"
+          class="btn btn-primary gap-1 col-1"
+        >
+          log In
+        </button>
+        <button
+          class="btn btn-success col-1"
+          data-bs-toggle="modal"
+          data-bs-target="#registerModal"
+        >
+          Register
+        </button>
+      </div>
       <h1>
         Balance : <span id="balanceSpan">******</span>
 
-        <i class="fa-solid fa-eye ms-3 " style="cursor: pointer" onclick=""></i>
+        <i
+          id="toggleBtn"
+          class="fa-solid fa-eye ms-3"
+          style="cursor: pointer"
+          onclick="toggleButton()"
+        ></i>
       </h1>
       <div id="action"></div>
-        <table class="table table-bordered table-dark text-center">
-          <thead>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
+      <table class="table table-bordered table-dark text-center">
+        <thead></thead>
+        <tbody></tbody>
+      </table>
     </div>
-    <!-- Modal -->
+    <!-- Modal Login -->
     <div
       class="modal fade"
       id="passwordModal"
@@ -83,6 +95,58 @@
               onclick="logIn()"
             >
               log In
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Register -->
+    <div
+      class="modal fade"
+      id="registerModal"
+      tabindex="-1"
+      aria-labelledby="registerModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registerModalLabel">Register</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input
+              type="text"
+              class="form-control p-2 m-2"
+              placeholder="Enter Your UserName"
+              id="registerInputUserName"
+            />
+            <input
+              type="password"
+              class="form-control p-2 m-2"
+              placeholder="Enter Your Password"
+              id="registerInputPassword"
+            />
+            <input
+              type="password"
+              class="form-control p-2 m-2"
+              placeholder="Confirm Password"
+              id="registerInputConfirmPassword"
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              onclick="register()"
+            >
+              Save
             </button>
           </div>
         </div>
