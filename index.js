@@ -9,18 +9,15 @@ let balanceSpan = document.querySelector("#balanceSpan");
 let inputPassword = document.querySelector("#inputPassword");
 let inputUserName = document.querySelector("#inputUserName");
 let action = document.querySelector("#action");
-
 let elPrice = document.querySelector("#before");
 let elDisscount = document.querySelector("#after");
 let inputBefore = document.querySelector("#inputBefore");
 let inputAfter = document.querySelector("#inputAfter");
 let table = document.querySelector("table thead");
 let tableBody = document.querySelector("table tbody");
-
 let showBalance = () => {
   balanceSpan.textContent = userInfo.balance;
 };
-
 let logIn = () => {
   let password = inputPassword.value;
   let userName = inputUserName.value;
@@ -72,7 +69,6 @@ let showTransactions = () => {
     `;
   });
 };
-
 let deposit = () => {
   let amount = document.querySelector("#amount");
   let amountInput = +amount.value;
@@ -93,7 +89,6 @@ let deposit = () => {
   }
   amount.value = "";
 };
-
 let withdraw = () => {
   let amount = document.querySelector("#amount");
   let amountInput = +amount.value;
